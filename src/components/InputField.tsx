@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import "./styles.css";
+import './InputStyles.css'
 
 interface Props {
   todo: string;
@@ -12,13 +12,13 @@ const InputField: React.FC<Props> = ({ todo, setTodo, handleAdd }) => {
   const inputRef = useRef<HTMLInputElement>(null);
  
   return (
-    <form className="input" onSubmit={(e)=> {
+    <form className="InputForm" onSubmit={(e)=> {
       handleAdd(e)
       inputRef.current?.blur();
       }}>
       <input
       ref={inputRef}
-        className="input_box"
+        className="input"
         value={todo}
         type="input"
         placeholder="enter a task"
